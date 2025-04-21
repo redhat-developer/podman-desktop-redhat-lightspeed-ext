@@ -49,6 +49,8 @@ export default [
   {
     ignores: [
       '*.config.*js',
+      '**/*.config.ts',
+      '**/vite.tests.setup.ts',
       '**/*.config.*js',
       '**/dist/**/*',
       '**/test-resources',
@@ -58,6 +60,7 @@ export default [
       '**/.svelte-kit/',
       'scripts/**',
       '**/src-generated/',
+      
     ],
   },
   js.configs.recommended,
