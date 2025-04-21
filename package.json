@@ -30,7 +30,7 @@
     "@eslint/compat": "^1.2.7",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
-    "@vitest/coverage-v8": "^3.0.8",
+    "@vitest/coverage-v8": "^3.1.2",
     "@vitest/eslint-plugin": "^1.1.36",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
