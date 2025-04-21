@@ -14,7 +14,7 @@ let mainContext: MainContext | undefined = $state();
 onMount(async () => {
   // Perform initalization
   main = new Main();
- const now = performance.now();
+  const now = performance.now();
   mainContext = await main.init();
   console.log(`Initialization took ${performance.now() - now}ms`);
 });

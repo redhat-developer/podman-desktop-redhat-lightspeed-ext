@@ -1,7 +1,7 @@
 import type { ExtensionContext } from '@podman-desktop/api';
 import { beforeEach, expect, test, vi } from 'vitest';
 import { activate, deactivate } from './main';
-import {LightspeedExtension } from './rhel-lightspeed-extension';
+import { LightspeedExtension } from './rhel-lightspeed-extension';
 
 let extensionContextMock: ExtensionContext;
 

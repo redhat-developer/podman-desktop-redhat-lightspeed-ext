@@ -16,7 +16,6 @@
  * SPDX-License-Identifier: Apache-2.0
  ***********************************************************************/
 
-
 import { API_LIGHTSPEED } from '/@common/channels';
 import { RpcBrowser } from '/@common/rpc/rpc';
 
@@ -36,7 +35,6 @@ export class Main implements IDisposable {
   private disposables: IDisposable[] = [];
 
   async init(): Promise<MainContext> {
-
     const webViewApi = acquirePodmanDesktopApi();
 
     const rpcBrowser: RpcBrowser = new RpcBrowser(window, webViewApi);

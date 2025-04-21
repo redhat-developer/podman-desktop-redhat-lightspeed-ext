@@ -35,7 +35,6 @@ const statesModule = new ContainerModule(options => {
   // Bind the StateArray to the StateHuggingFaceLocalCacheModelInfoUI
   options.bind(ChatResponseSessionHandler).toSelf().inSingletonScope();
   options.bind(IDisposable).toService(ChatResponseSessionHandler);
-
 });
 
 export { statesModule };

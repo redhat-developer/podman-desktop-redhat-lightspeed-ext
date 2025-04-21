@@ -34,7 +34,6 @@ vi.mock(import('node:fs'));
 vi.mock(import('node:fs/promises'));
 
 class TestLightspeedExtension extends LightspeedExtension {
-
   public getContainer(): Container | undefined {
     return super.getContainer();
   }
@@ -49,9 +48,8 @@ beforeEach(() => {
       html: '',
       onDidReceiveMessage: vi.fn(),
     },
-
   } as unknown as WebviewPanel);
-  vi.mocked(Uri.joinPath).mockReturnValue({fsPath: ''} as unknown as Uri);
+  vi.mocked(Uri.joinPath).mockReturnValue({ fsPath: '' } as unknown as Uri);
   vi.mocked(readFile).mockResolvedValue('<html></html>');
   // Create a mock for the ExtensionContext
   extensionContextMock = {
@@ -65,9 +63,7 @@ test('should activate correctly', async () => {
 
   await lightspeedExtension.activate();
 
-  expect(lightspeedExtension.getContainer()?.get(StateManager)).toBeInstanceOf(
-    StateManager,
-  );
+  expect(lightspeedExtension.getContainer()?.get(StateManager)).toBeInstanceOf(StateManager);
 });
 
 test('should deactivate correctly', async () => {
@@ -82,7 +78,6 @@ test('should deactivate correctly', async () => {
   // Check the bindings are gone
   expect(lightspeedExtension.getContainer()?.isBound(StateManager)).toBe(false);
 });
-
 
 test('should log error if getAsync for StateManager throws', async () => {
   expect.assertions(2);
@@ -99,9 +94,7 @@ test('should log error if getAsync for StateManager throws', async () => {
   const spyInitBindings = vi.spyOn(InversifyBinding.prototype, 'initBindings');
   spyInitBindings.mockImplementation(initBindingsMock);
 
-  await expect(lightspeedExtension.activate()).rejects.toThrowError(
-    error
-  );
+  await expect(lightspeedExtension.activate()).rejects.toThrowError(error);
 
   expect(fakeContainer.getAsync).toHaveBeenCalledWith(StateManager);
 
