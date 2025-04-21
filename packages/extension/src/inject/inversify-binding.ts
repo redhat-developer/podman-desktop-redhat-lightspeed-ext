@@ -37,7 +37,11 @@ export class InversifyBinding {
 
   readonly #telemetryLogger: TelemetryLogger;
 
-  constructor(rpcExtension: RpcExtension, extensionContext: PodmanDesktopExtensionContext, telemetryLogger: TelemetryLogger) {
+  constructor(
+    rpcExtension: RpcExtension,
+    extensionContext: PodmanDesktopExtensionContext,
+    telemetryLogger: TelemetryLogger,
+  ) {
     this.#rpcExtension = rpcExtension;
     this.#extensionContext = extensionContext;
     this.#telemetryLogger = telemetryLogger;

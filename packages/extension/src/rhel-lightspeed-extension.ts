@@ -16,9 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  ***********************************************************************/
 
-
 import { env, Uri, window, type ExtensionContext } from '@podman-desktop/api';
-
 
 import { RpcExtension } from '/@common/rpc/rpc';
 
@@ -40,9 +38,7 @@ export class LightspeedExtension {
   }
 
   async activate(): Promise<void> {
-
     const telemetryLogger = env.createTelemetryLogger();
-
 
     const panel = window.createWebviewPanel('lightspeed', 'RHEL Lightspeed', {
       localResourceRoots: [Uri.joinPath(this.#extensionContext.extensionUri, 'media')],
@@ -105,12 +101,11 @@ export class LightspeedExtension {
     for (const controller of controllers) {
       rpcExtension.registerInstance(controller.getChannel(), controller);
     }
+  }
 
-    }
-
-    protected getContainer(): Container | undefined {
-      return this.#container;
-    }
+  protected getContainer(): Container | undefined {
+    return this.#container;
+  }
 
   async deactivate(): Promise<void> {
     console.log('deactivating Lightspeed extension');
