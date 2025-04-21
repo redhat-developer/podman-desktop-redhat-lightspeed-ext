@@ -24,9 +24,7 @@ let lightspeedExtension: LightspeedExtension | undefined;
 
 // Initialize the activation of the extension.
 export async function activate(extensionContext: ExtensionContext): Promise<void> {
-  if (!lightspeedExtension) {
-    lightspeedExtension = new LightspeedExtension(extensionContext);
-  }
+  lightspeedExtension ??= new LightspeedExtension(extensionContext);
 
   await lightspeedExtension.activate();
 }
