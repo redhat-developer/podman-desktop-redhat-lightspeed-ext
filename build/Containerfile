@@ -15,7 +15,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-FROM ghcr.io/minc-org/minc-extension-builder:next AS builder
+FROM ghcr.io/redhat-developer/podman-desktop-redhat-lightspeed-ext-builder:next AS builder
 
 WORKDIR /opt/app-root/extension-source
 
@@ -26,6 +26,7 @@ COPY .gitignore /opt/app-root/extension-source/
 COPY *.json /opt/app-root/extension-source/
 COPY src /opt/app-root/extension-source/src
 COPY types /opt/app-root/extension-source/types
+COPY packages /opt/app-root/extension-source/packages
 
 # refresh dependencies (if needed)
 # and build the extension
