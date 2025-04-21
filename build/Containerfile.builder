@@ -24,7 +24,6 @@ WORKDIR /opt/app-root/extension-source
 RUN mkdir -p /opt/app-root/extension-source
 COPY package.json /opt/app-root/extension-source/
 COPY pnpm-lock.yaml /opt/app-root/extension-source/
-COPY packages/common/package.json /opt/app-root/extension-source/packages/common/package.json
 COPY packages/webview/package.json /opt/app-root/extension-source/packages/webview/package.json
 COPY packages/extension/package.json /opt/app-root/extension-source/packages/extension/package.json
 
