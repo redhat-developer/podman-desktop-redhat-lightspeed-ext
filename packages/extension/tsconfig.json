@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "strict":true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "lib": [
+      "ES2017",
+      "webworker",
+      "dom",
+    ],
+    "sourceMap": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "types": [
+      "node",
+    ],
+    "paths": {
+      "/@/*": ["./src/*"],
+      "/@common/*": ["../common/src/*"]
+    }
+  },
+  "include": [
+    "src",
+    "types/*.d.ts",
+    "../../types/*.d.ts",
+    "../common/*.ts",
+    "../common/**/*.ts" ],
+}
