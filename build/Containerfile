@@ -38,7 +38,9 @@ RUN pnpm install && \
 RUN mkdir /opt/app-root/extension && \
       cp -r packages/extension/dist /opt/app-root/extension/ && \
       cp packages/extension/package.json /opt/app-root/extension/ && \
-      cp packages/extension/*.png /opt/app-root/extension/
+      cp packages/extension/*.png /opt/app-root/extension/ && \
+      cp packages/extension/media /opt/app-root/extension/media
+
 
 COPY LICENSE /opt/app-root/extension/
 COPY README.md /opt/app-root/extension/
