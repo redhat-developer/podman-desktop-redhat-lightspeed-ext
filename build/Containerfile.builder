@@ -22,10 +22,12 @@ ENV HOME=/opt/app-root
 # copy the application files to the /opt/app-root/extension-source directory
 WORKDIR /opt/app-root/extension-source
 RUN mkdir -p /opt/app-root/extension-source
-COPY package.json /opt/app-root/extension-source/
-COPY pnpm-lock.yaml /opt/app-root/extension-source/
-COPY packages/webview/package.json /opt/app-root/extension-source/packages/webview/package.json
-COPY packages/extension/package.json /opt/app-root/extension-source/packages/extension/package.json
+COPY --chown=1001:root .npmrc /opt/app-root/extension-source/
+COPY --chown=1001:root package.json /opt/app-root/extension-source/
+COPY --chown=1001:root pnpm-lock.yaml /opt/app-root/extension-source/
+COPY --chown=1001:root pnpm-workspace.yaml /opt/app-root/extension-source/
+COPY --chown=1001:root packages/webview/package.json /opt/app-root/extension-source/packages/webview/package.json
+COPY --chown=1001:root packages/extension/package.json /opt/app-root/extension-source/packages/extension/package.json
 
 RUN npm install --global pnpm@10 && \
     pnpm --frozen-lockfile install
