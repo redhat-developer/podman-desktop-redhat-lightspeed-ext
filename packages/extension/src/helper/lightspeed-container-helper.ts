@@ -105,6 +105,7 @@ export class LightspeedContainerHelper {
           Target: '/etc/pki/consumer',
           Source: '/etc/pki/consumer',
           Type: 'bind',
+          Mode: 'Z',
         },
       ],
       Privileged: true,
