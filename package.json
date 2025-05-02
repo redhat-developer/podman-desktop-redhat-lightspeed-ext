@@ -45,7 +45,7 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-sonarjs": "^3.0.2",
     "eslint-plugin-svelte": "^3.5.1",
-    "eslint-plugin-unicorn": "^58.0.0",
+    "eslint-plugin-unicorn": "^59.0.0",
     "node-gyp": "^11.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
