@@ -100,14 +100,6 @@ export class LightspeedContainerHelper {
 
     // If the container does not exist, we can create it
     const hostConfig: HostConfig = {
-      Mounts: [
-        {
-          Target: '/etc/pki/consumer',
-          Source: '/etc/pki/consumer',
-          Type: 'bind',
-          Mode: 'Z',
-        },
-      ],
       Privileged: true,
       AutoRemove: true,
     };
