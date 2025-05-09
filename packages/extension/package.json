@@ -2,7 +2,7 @@
   "name": "rhel-lightspeed",
   "displayName": "RHEL Lightspeed",
   "description": "Podman Desktop extension allowing to get help from RHEL Lightspeed",
-  "version": "0.0.1-next",
+  "version": "0.2.0-next",
   "icon": "icon.png",
   "publisher": "redhat",
   "license": "Apache-2.0",
