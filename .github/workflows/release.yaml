@@ -101,7 +101,9 @@ jobs:
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${bumpedVersion}-next\",#g" package.json
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${bumpedVersion}-next\",#g" packages/extension/package.json
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${bumpedVersion}-next\",#g" packages/webview/package.json
-          git add package.json packages/extension/package.json packages/webview/package.json
+          # put back next as the version in the Containerfile
+          sed -i "s|\(ghcr.io/redhat-developer/podman-desktop-redhat-lightspeed-ext-builder:\)[^ ]*|\1next|" build/Containerfile
+          git add package.json packages/extension/package.json packages/webview/package.json build/Containerfile
 
           git commit -s --amend -m "chore: bump version to ${bumpedVersion}"
           git push origin "${bumpedBranchName}"
@@ -134,7 +136,7 @@ jobs:
         id: builder-image
         uses: redhat-actions/buildah-build@v2
         with:
-          image: minc-extension-builder
+          image: podman-desktop-redhat-lightspeed-ext-builder
           tags: latest ${{ needs.tag.outputs.extVersion }}
           platforms: linux/amd64, linux/arm64
           containerfiles: |
@@ -185,7 +187,7 @@ jobs:
         id: extension-image
         uses: redhat-actions/buildah-build@v2
         with:
-          image: minc-extension
+          image: podman-desktop-redhat-lightspeed-ext
           tags: latest ${{ needs.tag.outputs.extVersion }}
           archs: amd64, arm64
           containerfiles: |
