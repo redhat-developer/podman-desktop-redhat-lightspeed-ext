@@ -2,7 +2,7 @@
   "name": "webview",
   "displayName": "Webview UI of the extension",
   "description": "Webview UI for the Lightspeed extension",
-  "version": "0.2.0-next",
+  "version": "0.3.0-next",
   "type": "module",
   "scripts": {
     "preview": "vite preview",
