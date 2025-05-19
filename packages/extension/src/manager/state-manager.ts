@@ -16,7 +16,7 @@
  * SPDX-License-Identifier: Apache-2.0
  ***********************************************************************/
 
-import { type Disposable } from '@podman-desktop/api';
+import { containerEngine, type Disposable } from '@podman-desktop/api';
 import { inject, injectable, postConstruct } from 'inversify';
 
 import { RpcExtension } from '/@common/rpc/rpc';
@@ -64,7 +64,11 @@ export class StateManager implements Disposable {
     try {
       await this.lightspeedContainerHelper.ensureLightspeedContainerStarted();
     } catch (error: unknown) {
-      this.#state.status = LightspeedState.ERROR;
+      if (String(error).includes('Entitlement not found')) {
+        this.#state.status = LightspeedState.ERROR_ENTITLEMENT;
+      } else {
+        this.#state.status = LightspeedState.ERROR;
+      }
       this.#state.error = String(error);
       await this.broadcastStateInfo();
       return;
@@ -75,19 +79,48 @@ export class StateManager implements Disposable {
     };
     await this.broadcastStateInfo();
 
-    try {
-      await this.lightspeedContainerHelper.ensureLightspeedContainerStarted();
-    } catch (error: unknown) {
-      this.#state.status = LightspeedState.ERROR;
-      this.#state.error = String(error);
-      await this.broadcastStateInfo();
+    await this.checkAndBroadcast();
+
+    // In case we do have the container being deleted, retrigger the check
+    containerEngine.onEvent(async event => {
+      if (
+        event.Type === 'container' &&
+        event.status === 'remove' &&
+        'Actor' in event &&
+        event.Actor &&
+        typeof event.Actor === 'object' &&
+        'Attributes' in event.Actor &&
+        event.Actor.Attributes &&
+        typeof event.Actor.Attributes === 'object' &&
+        'name' in event.Actor.Attributes
+      ) {
+        const containerName = event.Actor.Attributes.name;
+        if (containerName === LightspeedContainerHelper.CONTAINER_NAME) {
+          await this.checkAndBroadcast();
+        }
+      }
+    });
+  }
+
+  protected async checkAndBroadcast(): Promise<void> {
+    if (!this.#state) {
       return;
     }
-
-    // Ready
-    this.#state.status = LightspeedState.READY;
-    this.#state.error = undefined;
-    await this.broadcastStateInfo();
+    try {
+      await this.lightspeedContainerHelper.ensureLightspeedContainerStarted();
+      // Ready
+      this.#state.status = LightspeedState.READY;
+      this.#state.error = undefined;
+    } catch (error: unknown) {
+      if (String(error).includes('Entitlement not found')) {
+        this.#state.status = LightspeedState.ERROR_ENTITLEMENT;
+      } else {
+        this.#state.status = LightspeedState.ERROR;
+      }
+      this.#state.error = String(error);
+    } finally {
+      await this.broadcastStateInfo();
+    }
   }
 
   protected async broadcastStateInfo(): Promise<void> {
@@ -96,5 +129,9 @@ export class StateManager implements Disposable {
 
   dispose(): void {
     this.#state = undefined;
+  }
+
+  async restartContainer(): Promise<void> {
+    return this.lightspeedContainerHelper.restart();
   }
 }
