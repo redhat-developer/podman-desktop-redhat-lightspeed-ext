@@ -27,17 +27,21 @@ import { Controller } from './controller-api';
 
 export class LightspeedImpl implements LightspeedApi, Controller<LightspeedApi> {
   @inject(StateManager)
-  modelManager: StateManager;
+  stateManager: StateManager;
 
   getChannel(): RpcChannel<LightspeedApi> {
     return API_LIGHTSPEED;
   }
 
   async initStates(): Promise<void> {
-    await this.modelManager.initStates();
+    await this.stateManager.initStates();
   }
 
   async check(): Promise<void> {
-    await this.modelManager.check();
+    await this.stateManager.check();
+  }
+
+  async restart(): Promise<void> {
+    await this.stateManager.restartContainer();
   }
 }

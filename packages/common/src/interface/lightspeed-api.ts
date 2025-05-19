@@ -20,4 +20,5 @@ export const LightspeedApi = Symbol.for('LightspeedApi');
 export interface LightspeedApi {
   initStates(): Promise<void>;
   check(): Promise<void>;
+  restart(): Promise<void>;
 }

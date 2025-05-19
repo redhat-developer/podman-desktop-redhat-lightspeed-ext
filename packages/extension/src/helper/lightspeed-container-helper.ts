@@ -59,10 +59,26 @@ export class LightspeedContainerHelper {
   }
 
   async ensureLightspeedContainerStarted(): Promise<void> {
+    const podmanConnection = this.getFirstRunningPodmanEngine();
+
     const container = await this.getLightspeedContainer();
     // Container already exists and is running
     if (container) {
-      return;
+      // Check if /run/secrets/etc-pki-entitlement is available inside the container.
+      const checkPKIresult = await this.execute(podmanConnection, [
+        'exec',
+        container.Id,
+        '/bin/sh',
+        '-c',
+        'ls -l /run/secrets | grep "^d" | awk "{print \\$9}"',
+      ]);
+      // Check if we do have the entitlement
+      if (checkPKIresult.stdout.includes('etc-pki-entitlement')) {
+        return;
+      }
+
+      // If the container is running but the entitlement is not available, we need to restart the container
+      throw new Error('Entitlement not found, please login and restart the container');
     }
 
     const firstRunningConnection = this.getFirstRunningPodmanEngine()?.connection;
@@ -148,5 +164,14 @@ export class LightspeedContainerHelper {
       ...options,
       connection,
     });
+  }
+
+  async restart(): Promise<void> {
+    // Gets the existing container
+    const container = await this.getLightspeedContainer();
+    if (container) {
+      await containerEngine.deleteContainer(container.engineId, container.Id);
+      await this.ensureLightspeedContainerStarted();
+    }
   }
 }
