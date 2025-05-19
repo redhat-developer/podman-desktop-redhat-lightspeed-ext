@@ -2,7 +2,7 @@
   "name": "lightspeed-monorepo",
   "displayName": "Mono repository for RHEL lightspeed extension for Podman Desktop",
   "description": "Root repository",
-  "version": "0.2.0-next",
+  "version": "0.2.0",
   "publisher": "redhat",
   "private": true,
   "engines": {
