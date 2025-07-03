@@ -16,7 +16,7 @@
     "watch": "vite --mode development build -w"
   },
   "dependencies": {
-    "deep-chat": "^2.2.0",
+    "deep-chat": "^2.2.2",
     "inversify": "^7.5.1",
     "svelte-preprocess": "^6.0.3"
   },
