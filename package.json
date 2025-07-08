@@ -49,7 +49,7 @@
     "node-gyp": "^11.2.0",
     "prettier": "^3.6.1",
     "prettier-plugin-svelte": "^3.3.3",
-    "svelte": "5.35.2",
+    "svelte": "5.35.4",
     "svelte-check": "^4.2.2",
     "svelte-eslint-parser": "^1.1.3",
     "typescript": "5.8.3",
