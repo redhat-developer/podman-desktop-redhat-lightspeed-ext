@@ -17,6 +17,7 @@
  ***********************************************************************/
 
 import { inject, injectable, postConstruct } from 'inversify';
+import { SvelteMap } from 'svelte/reactivity';
 
 import type { IDisposable } from '/@/util/disposable';
 import { EVENT_CHAT_RESPONSE_DATA } from '/@common/channels';
@@ -33,7 +34,7 @@ export interface StateSessionCallbackParams<T> {
 // Dispatch the data to the right callback based on the session ID
 @injectable()
 export class ChatResponseSessionHandler implements IDisposable {
-  #callbacks = new Map<number, (response: ChatResponseInfo) => void>();
+  #callbacks = new SvelteMap<number, (response: ChatResponseInfo) => void>();
 
   @inject(RpcBrowser)
   private rpcBrowser: RpcBrowser;
