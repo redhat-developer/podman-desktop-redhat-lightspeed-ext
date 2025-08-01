@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "ansi_up": "^6.0.5",
-    "inversify": "^7.6.1",
+    "inversify": "^7.7.0",
     "reflect-metadata": "^0.2.2"
   }
 }
