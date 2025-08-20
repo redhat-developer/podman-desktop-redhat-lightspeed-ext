@@ -191,8 +191,8 @@ importers:
         specifier: 1.20.2
         version: 1.20.2(svelte-fa@4.0.4(svelte@5.38.2))(svelte@5.38.2)
       '@podman-desktop/webview-api':
-        specifier: 1.20.2
-        version: 1.20.2
+        specifier: 1.21.0
+        version: 1.21.0
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6
         version: 6.1.3(svelte@5.38.2)(vite@7.1.3(@types/node@22.17.2)(jiti@2.5.1)(lightningcss@1.30.1))
@@ -717,8 +717,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0
       svelte-fa: ^4.0.0
 
-  '@podman-desktop/webview-api@1.20.2':
-    resolution: {integrity: sha512-R3tSG7pNMDbgr9lnSUex1TDmTh04EspOsdKq3Sp79xy889fkxZeiE+wkh9gB3uGVrOuD9DPhunfqK8rCBq5Nyg==}
+  '@podman-desktop/webview-api@1.21.0':
+    resolution: {integrity: sha512-2rVHljyPhb+Y7lGUAByPR7KtEnbAkjPVnrw4Jn28Sgc6hrgjd+FbvX4nv5rqas1ngqrZ/znzvGvBnFXC9i3JAQ==}
 
   '@rollup/rollup-android-arm-eabi@4.44.2':
     resolution: {integrity: sha512-g0dF8P1e2QYPOj1gu7s/3LVP6kze9A7m6x0BZ9iTdXK8N5c2V7cpBKHV3/9A4Zd8xxavdhK0t4PnqjkqVmUc9Q==}
@@ -3912,7 +3912,7 @@ snapshots:
       svelte: 5.38.2
       svelte-fa: 4.0.4(svelte@5.38.2)
 
-  '@podman-desktop/webview-api@1.20.2': {}
+  '@podman-desktop/webview-api@1.21.0': {}
 
   '@rollup/rollup-android-arm-eabi@4.44.2':
     optional: true
