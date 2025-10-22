@@ -167,7 +167,7 @@ importers:
     dependencies:
       deep-chat:
         specifier: ^2.2.0
-        version: 2.2.2
+        version: 2.3.0
       inversify:
         specifier: ^7.9.1
         version: 7.10.3(reflect-metadata@0.2.2)
@@ -191,8 +191,8 @@ importers:
         specifier: 1.21.0
         version: 1.21.0(svelte-fa@4.0.4(svelte@5.39.2))(svelte@5.39.2)
       '@podman-desktop/webview-api':
-        specifier: 1.21.0
-        version: 1.21.0
+        specifier: 1.22.1
+        version: 1.22.1
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6
         version: 6.2.1(svelte@5.39.2)(vite@7.1.11(@types/node@22.18.12)(jiti@2.6.1)(lightningcss@1.30.2))
@@ -721,8 +721,8 @@ packages:
       svelte: ^4.0.0 || ^5.0.0
       svelte-fa: ^4.0.0
 
-  '@podman-desktop/webview-api@1.21.0':
-    resolution: {integrity: sha512-2rVHljyPhb+Y7lGUAByPR7KtEnbAkjPVnrw4Jn28Sgc6hrgjd+FbvX4nv5rqas1ngqrZ/znzvGvBnFXC9i3JAQ==}
+  '@podman-desktop/webview-api@1.22.1':
+    resolution: {integrity: sha512-JdUf/Pzn1CRpNh61tupiXzqQUjgJavvfhYcCkWJnNDEHWv1kUTJR6SyIEraX+6xDXFBbQkZzs973BXgr6+PURw==}
 
   '@rollup/rollup-android-arm-eabi@4.50.0':
     resolution: {integrity: sha512-lVgpeQyy4fWN5QYebtW4buT/4kn4p4IJ+kDNB4uYNT5b8c8DLJDg6titg20NIg7E8RWwdWZORW6vUFfrLyG3KQ==}
@@ -1590,8 +1590,8 @@ packages:
   decimal.js@10.6.0:
     resolution: {integrity: sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==}
 
-  deep-chat@2.2.2:
-    resolution: {integrity: sha512-2e/VqEsYsRAPG64SB6ieResgVk3TW/a0qQuNY/gAakCRKXnEXeWoU8RPNQRHTJUp/LXU2Uo7uiqcBvVsVRdtGA==}
+  deep-chat@2.3.0:
+    resolution: {integrity: sha512-3dEBdJd3PZrZ29hggecZB13MzHLGcyuQ9+qRDohcxinTHhCcV6TjfGRkaLvh+9D2akHOXO238usJwFlnzupmUA==}
 
   deep-eql@5.0.2:
     resolution: {integrity: sha512-h5k/5U50IJJFpzfL6nO9jaaumfjO/f2NjK/oYB2Djzm4p9L+3T9qWpZqZ2hAbLPuuYq9wrU08WQyBTL5GbPk5Q==}
@@ -3895,7 +3895,7 @@ snapshots:
       svelte: 5.39.2
       svelte-fa: 4.0.4(svelte@5.39.2)
 
-  '@podman-desktop/webview-api@1.21.0': {}
+  '@podman-desktop/webview-api@1.22.1': {}
 
   '@rollup/rollup-android-arm-eabi@4.50.0':
     optional: true
@@ -4771,7 +4771,7 @@ snapshots:
 
   decimal.js@10.6.0: {}
 
-  deep-chat@2.2.2:
+  deep-chat@2.3.0:
     dependencies:
       '@microsoft/fetch-event-source': 2.0.1
       remarkable: 2.0.1
