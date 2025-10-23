@@ -188,8 +188,8 @@ importers:
         specifier: ^7.0.0
         version: 7.1.0
       '@podman-desktop/ui-svelte':
-        specifier: 1.21.0
-        version: 1.21.0(svelte-fa@4.0.4(svelte@5.39.2))(svelte@5.39.2)
+        specifier: 1.22.1
+        version: 1.22.1(svelte-fa@4.0.4(svelte@5.39.2))(svelte@5.39.2)
       '@podman-desktop/webview-api':
         specifier: 1.22.1
         version: 1.22.1
@@ -715,8 +715,8 @@ packages:
   '@podman-desktop/api@1.22.1':
     resolution: {integrity: sha512-8o6jdbKaGqj80mDCjvS+wDJF2jVo1/RgV6eIFPf+Gi/2LF99nh69oDTSlBUndWNfc/MSphguXpbrBC6xYJhuZA==}
 
-  '@podman-desktop/ui-svelte@1.21.0':
-    resolution: {integrity: sha512-5ptTIAflI191jgF5q0n4YHxCo588OC4eUEAJhgUz01EglCIRSCUluI7WzQ8ML7X90iLbcJ5O8gsbXj6eERdbkg==}
+  '@podman-desktop/ui-svelte@1.22.1':
+    resolution: {integrity: sha512-LhHPvphcKBuSIz5xqH6Uevhac32RCYNta45gH4BQYYKlsFtJxhVd9LIBHovzK6oxoQ++fNxtCvhUGEtR7Rw/6Q==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
       svelte-fa: ^4.0.0
@@ -2090,8 +2090,8 @@ packages:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
 
-  humanize-duration@3.33.0:
-    resolution: {integrity: sha512-vYJX7BSzn7EQ4SaP2lPYVy+icHDppB6k7myNeI3wrSRfwMS5+BHyGgzpHR0ptqJ2AQ6UuIKrclSg5ve6Ci4IAQ==}
+  humanize-duration@3.33.1:
+    resolution: {integrity: sha512-hwzSCymnRdFx9YdRkQQ0OYequXiVAV6ZGQA2uzocwB0F4309Ke6pO8dg0P8LHhRQJyVjGteRTAA/zNfEcpXn8A==}
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -3884,13 +3884,13 @@ snapshots:
 
   '@podman-desktop/api@1.22.1': {}
 
-  '@podman-desktop/ui-svelte@1.21.0(svelte-fa@4.0.4(svelte@5.39.2))(svelte@5.39.2)':
+  '@podman-desktop/ui-svelte@1.22.1(svelte-fa@4.0.4(svelte@5.39.2))(svelte@5.39.2)':
     dependencies:
       '@fortawesome/fontawesome-free': 7.1.0
       '@fortawesome/free-brands-svg-icons': 7.1.0
       '@fortawesome/free-regular-svg-icons': 7.1.0
       '@fortawesome/free-solid-svg-icons': 7.1.0
-      humanize-duration: 3.33.0
+      humanize-duration: 3.33.1
       moment: 2.30.1
       svelte: 5.39.2
       svelte-fa: 4.0.4(svelte@5.39.2)
@@ -5473,7 +5473,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  humanize-duration@3.33.0: {}
+  humanize-duration@3.33.1: {}
 
   iconv-lite@0.6.3:
     dependencies:
