@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "deep-chat": "^2.2.0",
-    "inversify": "^7.9.1",
+    "inversify": "^7.10.4",
     "svelte-preprocess": "^6.0.3"
   },
   "devDependencies": {
