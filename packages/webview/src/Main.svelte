@@ -5,7 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import { onDestroy, onMount } from 'svelte';
 
-import { Main, type MainContext } from './main';
+import { Main } from './main';
+import type { MainContext } from './main';
 import MainContextAware from './MainContextAware.svelte';
 
 let main: Main | undefined;
