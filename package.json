@@ -1,5 +1,7 @@
 {
   "name": "lightspeed-monorepo",
+  "repository": "https://github.com/redhat-developer/podman-desktop-redhat-lightspeed-ext",
+  "homepage": "https://github.com/redhat-developer/podman-desktop-redhat-lightspeed-ext#readme",
   "displayName": "Mono repository for RHEL lightspeed extension for Podman Desktop",
   "description": "Root repository",
   "version": "0.3.0-next",
