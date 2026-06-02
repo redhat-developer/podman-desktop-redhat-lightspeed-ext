@@ -37,7 +37,7 @@
     "prettier": "^3.8.2",
     "typescript": "5.9.3",
     "vite": "^8.0",
-    "vitest": "^3.1"
+    "vitest": "^4.1"
   },
   "dependencies": {
     "ansi_up": "^6.0.5",
