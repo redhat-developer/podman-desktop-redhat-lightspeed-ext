@@ -50,7 +50,7 @@
     "eslint-plugin-unicorn": "^64.0.0",
     "node-gyp": "^12.0.0",
     "prettier": "^3.8.2",
-    "prettier-plugin-svelte": "^4.0.1",
+    "prettier-plugin-svelte": "^4.1.0",
     "svelte": "5.55.10",
     "svelte-check": "^4.4.7",
     "svelte-eslint-parser": "^1.6.1",
