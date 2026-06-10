@@ -33,7 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^8.59.4",
     "@typescript-eslint/parser": "^8.30.1",
     "@vitest/coverage-v8": "^4.1.5",
-    "@vitest/eslint-plugin": "^1.6.17",
+    "@vitest/eslint-plugin": "^1.6.20",
     "autoprefixer": "^10.5.0",
     "concurrently": "^10.0.0",
     "eslint": "^9.39.2",
