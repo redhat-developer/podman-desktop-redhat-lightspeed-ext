@@ -124,8 +124,8 @@ importers:
         version: 0.2.2
     devDependencies:
       '@podman-desktop/api':
-        specifier: 1.28.2
-        version: 1.28.2
+        specifier: 1.28.3
+        version: 1.28.3
       '@types/node':
         specifier: ^22
         version: 22.20.1
@@ -719,8 +719,8 @@ packages:
     peerDependencies:
       typescript: ^3 || ^4 || ^5
 
-  '@podman-desktop/api@1.28.2':
-    resolution: {integrity: sha512-kSBVWUSyuijS5a9HvqFAlihmy6D26nwTPZ0Yw9K/2W11grWeI/AvaS+THTmxHvXk8EbB9y8ydWpXhA8el67NKQ==}
+  '@podman-desktop/api@1.28.3':
+    resolution: {integrity: sha512-RCYrD90VfVn59oa8vTaDXj8Qy9BD0jxyiTNBhKNcloYf1hBCDMIKgqTcXYgNq15/5P1aGjRmgaG/jnhDEuux/g==}
 
   '@podman-desktop/ui-svelte@1.28.2':
     resolution: {integrity: sha512-BONAC07WOpeD0nB5JoFNHTOWOQX298g8/6uvCImW+rs5013tdyAK3ymeOhCcUXdvz7bX8qbuAdhqY94G9msJxg==}
@@ -3983,7 +3983,7 @@ snapshots:
       esquery: 1.7.0
       typescript: 5.9.3
 
-  '@podman-desktop/api@1.28.2': {}
+  '@podman-desktop/api@1.28.3': {}
 
   '@podman-desktop/ui-svelte@1.28.2(svelte-fa@4.0.4(svelte@5.56.6(@typescript-eslint/types@8.64.0)))(svelte@5.56.6(@typescript-eslint/types@8.64.0))':
     dependencies:
