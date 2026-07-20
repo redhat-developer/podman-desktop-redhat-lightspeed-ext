@@ -76,7 +76,7 @@ importers:
         version: 4.2.0(eslint@9.39.5(jiti@2.7.0))
       eslint-plugin-svelte:
         specifier: ^3.18.0
-        version: 3.20.0(eslint@9.39.5(jiti@2.7.0))(svelte@5.56.6(@typescript-eslint/types@8.64.0))
+        version: 3.22.0(eslint@9.39.5(jiti@2.7.0))(svelte@5.56.6(@typescript-eslint/types@8.64.0))
       eslint-plugin-unicorn:
         specifier: ^65.0.0
         version: 65.0.1(eslint@9.39.5(jiti@2.7.0))
@@ -124,8 +124,8 @@ importers:
         version: 0.2.2
     devDependencies:
       '@podman-desktop/api':
-        specifier: 1.28.2
-        version: 1.28.2
+        specifier: 1.28.3
+        version: 1.28.3
       '@types/node':
         specifier: ^22
         version: 22.20.1
@@ -179,7 +179,7 @@ importers:
     dependencies:
       deep-chat:
         specifier: ^2.2.0
-        version: 2.4.2
+        version: 2.5.0
       inversify:
         specifier: ^7.11.0
         version: 7.11.0(reflect-metadata@0.2.2)
@@ -719,8 +719,8 @@ packages:
     peerDependencies:
       typescript: ^3 || ^4 || ^5
 
-  '@podman-desktop/api@1.28.2':
-    resolution: {integrity: sha512-kSBVWUSyuijS5a9HvqFAlihmy6D26nwTPZ0Yw9K/2W11grWeI/AvaS+THTmxHvXk8EbB9y8ydWpXhA8el67NKQ==}
+  '@podman-desktop/api@1.28.3':
+    resolution: {integrity: sha512-RCYrD90VfVn59oa8vTaDXj8Qy9BD0jxyiTNBhKNcloYf1hBCDMIKgqTcXYgNq15/5P1aGjRmgaG/jnhDEuux/g==}
 
   '@podman-desktop/ui-svelte@1.28.2':
     resolution: {integrity: sha512-BONAC07WOpeD0nB5JoFNHTOWOQX298g8/6uvCImW+rs5013tdyAK3ymeOhCcUXdvz7bX8qbuAdhqY94G9msJxg==}
@@ -1759,8 +1759,8 @@ packages:
   decimal.js@10.6.0:
     resolution: {integrity: sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==}
 
-  deep-chat@2.4.2:
-    resolution: {integrity: sha512-wQNd6Z6HDoH7OMeoQKpmxDm9XdWrRjMkBJ2yl5tsYND9Dz2UCv/BdGVM8vK2V0mhO1u+OniHYPWDGvjlNxjCeQ==}
+  deep-chat@2.5.0:
+    resolution: {integrity: sha512-3f0nJ+ittHZL3zWPZIe/WTb7g1/CY7T5qpKn+Ir7p4qXGBjQd/R3R2SSPBiDv5C/Sg6W42JYmbOMayfDlusy3A==}
 
   deep-eql@5.0.2:
     resolution: {integrity: sha512-h5k/5U50IJJFpzfL6nO9jaaumfjO/f2NjK/oYB2Djzm4p9L+3T9qWpZqZ2hAbLPuuYq9wrU08WQyBTL5GbPk5Q==}
@@ -1985,8 +1985,8 @@ packages:
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-svelte@3.20.0:
-    resolution: {integrity: sha512-AElKLVt7Hjy4d7ljwhrhw9hux60DCxCNkmK8cY/aAXvjs8tpR7PvU4DlyI/SA1PaJww1gh0wPGo2pbyURuEwxQ==}
+  eslint-plugin-svelte@3.22.0:
+    resolution: {integrity: sha512-O3qn0NePTWta+1o25dIThqeEP/hEQ3VxDK2LVO8SQ5wG9umLMvulK+m1yQ4JGOb2Pkl8IB0G1lpRV/HXDXSLTQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0 || ^10.0.0
@@ -3063,8 +3063,8 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
-  speech-to-element@1.0.4:
-    resolution: {integrity: sha512-0wDab5u0vbch7taU48N4ccqNBqHMX7EtrOeZdfwfrZ3e4Cw4OTyZZziLjCouTjWaT/oe4SmpK26/28SjNLxFLQ==}
+  speech-to-element@2.0.0:
+    resolution: {integrity: sha512-p5xdDL/CNvjfuxWBARXydlUyiVztHcm45ZkTMpaDg4SZF/VACDEzQyWX+iMmsiEKTjsmrY0RjBlzXqJHo976xA==}
 
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
@@ -3983,7 +3983,7 @@ snapshots:
       esquery: 1.7.0
       typescript: 5.9.3
 
-  '@podman-desktop/api@1.28.2': {}
+  '@podman-desktop/api@1.28.3': {}
 
   '@podman-desktop/ui-svelte@1.28.2(svelte-fa@4.0.4(svelte@5.56.6(@typescript-eslint/types@8.64.0)))(svelte@5.56.6(@typescript-eslint/types@8.64.0))':
     dependencies:
@@ -4972,11 +4972,11 @@ snapshots:
 
   decimal.js@10.6.0: {}
 
-  deep-chat@2.4.2:
+  deep-chat@2.5.0:
     dependencies:
       '@microsoft/fetch-event-source': 2.0.1
       remarkable: 2.0.1
-      speech-to-element: 1.0.4
+      speech-to-element: 2.0.0
 
   deep-eql@5.0.2: {}
 
@@ -5347,7 +5347,7 @@ snapshots:
       typescript: 5.9.3
       yaml: 2.9.0
 
-  eslint-plugin-svelte@3.20.0(eslint@9.39.5(jiti@2.7.0))(svelte@5.56.6(@typescript-eslint/types@8.64.0)):
+  eslint-plugin-svelte@3.22.0(eslint@9.39.5(jiti@2.7.0))(svelte@5.56.6(@typescript-eslint/types@8.64.0)):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.5(jiti@2.7.0))
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -6440,7 +6440,7 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  speech-to-element@1.0.4: {}
+  speech-to-element@2.0.0: {}
 
   sprintf-js@1.0.3: {}
 
