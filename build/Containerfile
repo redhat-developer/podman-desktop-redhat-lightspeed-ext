@@ -25,7 +25,6 @@ COPY --chown=1001:root pnpm-workspace.yaml /opt/app-root/extension-source/
 COPY --chown=1001:root pnpm-lock.yaml /opt/app-root/extension-source/
 COPY --chown=1001:root .gitignore /opt/app-root/extension-source/
 COPY --chown=1001:root package.json /opt/app-root/extension-source/
-COPY --chown=1001:root .npmrc /opt/app-root/extension-source/
 COPY --chown=1001:root types /opt/app-root/extension-source/types
 COPY --chown=1001:root packages /opt/app-root/extension-source/packages
 

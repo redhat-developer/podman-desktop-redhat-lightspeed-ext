@@ -64,25 +64,8 @@
     "tests/*"
   ],
   "dependencies": {},
-  "pnpm": {
-    "overrides": {
-      "minimatch@<3.1.3": "^3.1.3",
-      "minimatch@>=9.0.0 <9.0.6": "^9.0.6",
-      "picomatch@>=4.0.0 <4.0.4": ">=4.0.4",
-      "flatted@<3.4.0": ">=3.4.0",
-      "rollup@>=4.0.0 <4.59.0": ">=4.59.0",
-      "brace-expansion@<1.1.13": ">=1.1.13",
-      "brace-expansion@>=5.0.0 <5.0.7": ">=5.0.7",
-      "postcss@<8.5.10": ">=8.5.10",
-      "esbuild@>=0.17.0 <0.28.1": ">=0.28.1",
-      "js-yaml@<4.2.0": ">=4.2.0",
-      "undici@>=7.23.0 <7.28.0": "^7.28.0",
-      "undici@<6.27.0": ">=6.27.0 <7.0.0",
-      "shell-quote@<1.9.0": ">=1.9.0"
-    }
-  },
   "resolutions": {
     "@testing-library/dom>@babel/runtime": "^7.26.10"
   },
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+  "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }
