@@ -29,7 +29,7 @@
     "typecheck": "pnpm run typecheck:common && pnpm run typecheck:webview && pnpm run typecheck:extension"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.4",
+    "@eslint/compat": "^2.1.1",
     "@typescript-eslint/eslint-plugin": "^8.68.0",
     "@typescript-eslint/parser": "^8.68.0",
     "@vitest/coverage-v8": "^4.1.11",
