@@ -30,7 +30,7 @@
     "@sveltejs/vite-plugin-svelte": "^7",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.3.3",
-    "@testing-library/dom": "^10.4.0",
+    "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/svelte": "^5.2.7",
     "@testing-library/user-event": "^14.6.7",
