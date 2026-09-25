@@ -38,7 +38,7 @@
     "@types/humanize-duration": "^3.27.4",
     "@typescript-eslint/eslint-plugin": "^8.70.1",
     "@typescript-eslint/parser": "^8.70.1",
-    "jsdom": "^30.1.0",
+    "jsdom": "^30.1.1",
     "prettier": "^3.9.8",
     "prettier-plugin-svelte": "^4.1.1",
     "reflect-metadata": "^0.2.2",
