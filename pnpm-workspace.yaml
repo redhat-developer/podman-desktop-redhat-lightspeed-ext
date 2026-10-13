@@ -30,3 +30,7 @@ allowBuilds:
   esbuild: true
   svelte-preprocess: true
   unrs-resolver: true
+peerDependencyRules:
+  allowedVersions:
+    eslint-plugin-import>eslint: '^9 || ^10'
+    eslint-plugin-file-progress>eslint: '^9 || ^10'
