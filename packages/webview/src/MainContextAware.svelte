@@ -12,15 +12,9 @@ interface Props {
 
 const { context }: Props = $props();
 
-let initialized = $state(false);
-
 // Sets the value in the global svelte context
 setContext(Remote, context.remote);
 setContext(States, context.states);
-
-initialized = true;
 </script>
 
-{#if initialized}
-  <Lightspeed />
-{/if}
+<Lightspeed />
