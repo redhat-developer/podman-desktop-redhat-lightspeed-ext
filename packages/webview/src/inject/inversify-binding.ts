@@ -45,7 +45,7 @@ export class InversifyBinding {
     this.#container.bind(Remote).toConstantValue(this.#rpcBrowser);
     this.#container.bind('WebviewApi').toConstantValue(this.#webviewApi);
 
-    await this.#container.load(statesModule);
+    await this.#container.loadAsync(statesModule);
 
     return this.#container;
   }
