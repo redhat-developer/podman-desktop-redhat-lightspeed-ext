@@ -31,7 +31,7 @@ on:
 
 jobs:
   check-builder-changes:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       builder_required: ${{ steps.check.outputs.builder_required }}
     steps:
@@ -53,7 +53,7 @@ jobs:
     needs: check-builder-changes
     if: needs.check-builder-changes.outputs.builder_required == 'true'
     name: Build and publish builder OCI images only if pnpm-lock.yaml or package.json changes
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -103,7 +103,7 @@ jobs:
   extension-image:
     name: Build and publish extension OCI image
     if: always()
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs: builder-image
 
     steps:
