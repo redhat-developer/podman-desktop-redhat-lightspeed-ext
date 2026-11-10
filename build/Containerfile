@@ -15,41 +15,36 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-FROM ghcr.io/redhat-developer/podman-desktop-redhat-lightspeed-ext-builder:next AS builder
+FROM registry.access.redhat.com/ubi10/nodejs-24-minimal:1791463197@sha256:498ccfc43f6fe349a4d87db6af6d83ab420e9450f3800140cdc90c290dcd462f AS builder
 
-WORKDIR /opt/app-root/extension-source
+WORKDIR /opt/app-root/src
 
-# copy source code
-COPY --chown=1001:root *.ts /opt/app-root/extension-source/
-COPY --chown=1001:root pnpm-workspace.yaml /opt/app-root/extension-source/
-COPY --chown=1001:root pnpm-lock.yaml /opt/app-root/extension-source/
-COPY --chown=1001:root .gitignore /opt/app-root/extension-source/
-COPY --chown=1001:root package.json /opt/app-root/extension-source/
-COPY --chown=1001:root types /opt/app-root/extension-source/types
-COPY --chown=1001:root packages /opt/app-root/extension-source/packages
+# pnpm runs an implicit dependency check before `run` scripts, which spawns a
+# nested `pnpm install`. Setting CI here rather than per-RUN makes every pnpm
+# invocation non-interactive, otherwise that nested install blocks on a prompt.
+ENV CI=true
 
-# refresh dependencies (if needed)
-# and build the extension
-RUN pnpm install && \
-    pnpm build
+COPY --chown=1001:1001 . .
 
-# copy output of the build + required files
-RUN mkdir /opt/app-root/extension && \
-      cp -r packages/extension/dist /opt/app-root/extension/ && \
-      cp packages/extension/package.json /opt/app-root/extension/ && \
-      cp packages/extension/*.png /opt/app-root/extension/ && \
-      cp -r packages/extension/media /opt/app-root/extension/media
+RUN npm i -g corepack@0.36.0 && corepack enable
 
+RUN pnpm install
+RUN pnpm build
 
-COPY LICENSE /opt/app-root/extension/
-COPY README.md /opt/app-root/extension/
+# Assemble the extension layout, so the final stage is a single COPY
+RUN mkdir -p /opt/app-root/extension
+RUN cp -r packages/extension/dist /opt/app-root/extension/
+RUN cp packages/extension/package.json /opt/app-root/extension/
+RUN cp packages/extension/icon.png /opt/app-root/extension/
+RUN cp -r packages/extension/media /opt/app-root/extension/
+RUN cp LICENSE /opt/app-root/extension/
+RUN cp README.md /opt/app-root/extension/
 
-# Copy the extension to a new image
 FROM scratch
+
+COPY --from=builder /opt/app-root/extension /extension
 
 LABEL org.opencontainers.image.title="RHEL Lightspeed extension" \
       org.opencontainers.image.description="RHEL Lightspeed extension" \
       org.opencontainers.image.vendor="podman-desktop" \
       io.podman-desktop.api.version=">= 1.18.0"
-
-COPY --from=builder /opt/app-root/extension /extension

@@ -68,9 +68,8 @@ jobs:
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${{ steps.TAG_UTIL.outputs.extVersion }}\",#g" package.json
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${{ steps.TAG_UTIL.outputs.extVersion }}\",#g" packages/extension/package.json
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${{ steps.TAG_UTIL.outputs.extVersion }}\",#g" packages/webview/package.json
-          sed -i "s#\(ghcr.io/redhat-developer/podman-desktop-redhat-lightspeed-ext-builder:\)next#\1${{ steps.TAG_UTIL.outputs.extVersion }}#g" build/Containerfile
 
-          git add package.json packages/extension/package.json packages/webview/package.json build/Containerfile
+          git add package.json packages/extension/package.json packages/webview/package.json
 
           # commit the changes
           git commit -m "chore: 🥁 tagging ${{ steps.TAG_UTIL.outputs.githubTag }} 🥳"
@@ -101,9 +100,7 @@ jobs:
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${bumpedVersion}-next\",#g" package.json
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${bumpedVersion}-next\",#g" packages/extension/package.json
           sed -i  "s#version\":\ \"\(.*\)\",#version\":\ \"${bumpedVersion}-next\",#g" packages/webview/package.json
-          # put back next as the version in the Containerfile
-          sed -i "s|\(ghcr.io/redhat-developer/podman-desktop-redhat-lightspeed-ext-builder:\)[^ ]*|\1next|" build/Containerfile
-          git add package.json packages/extension/package.json packages/webview/package.json build/Containerfile
+          git add package.json packages/extension/package.json packages/webview/package.json
 
           git commit -s --amend -m "chore: bump version to ${bumpedVersion}"
           git push origin "${bumpedBranchName}"
@@ -119,59 +116,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PODMAN_DESKTOP_BOT_TOKEN }}
 
 
-  builder-image:
-    needs: tag
-    runs-on: ubuntu-26.04
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          ref: ${{ needs.tag.outputs.githubTag }}
-
-      - name: Install qemu dependency
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y qemu-user-static
-
-      - name: build builder image
-        id: builder-image
-        uses: redhat-actions/buildah-build@719e3c40d8af9790c23eca13f7daa339f2867034 # v3.1.0
-        with:
-          image: podman-desktop-redhat-lightspeed-ext-builder
-          tags: latest ${{ needs.tag.outputs.extVersion }}
-          platforms: linux/amd64, linux/arm64
-          containerfiles: |
-            build/Containerfile.builder
-          context: .
-          oci: true
-
-      - name: Log in to ghcr.io
-        uses: redhat-actions/podman-login@50c2d9a331bb67c8fdab99b86455fad05e2e3252 # v2.0
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io
-
-      - name: publish builder to ghcr.io
-        id: push-to-ghcr
-        uses: redhat-actions/push-to-registry@94ade333c38ecc0e60e94785125d9a52ca423b37 # v3.0.0
-        with:
-          image: ${{ steps.builder-image.outputs.image }}
-          tags: ${{ steps.builder-image.outputs.tags }}
-          registry: ghcr.io/${{ github.repository_owner }}
-
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
-        with:
-          subject-name: ghcr.io/${{ github.repository_owner }}/podman-desktop-redhat-lightspeed-ext-builder
-          subject-digest: ${{ steps.push-to-ghcr.outputs.digest }}
-          push-to-registry: true
-
-
   extension-image:
     name: Build and publish extension OCI image
 
     runs-on: ubuntu-26.04
-    needs: [builder-image, tag]
+    needs: tag
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -218,7 +167,7 @@ jobs:
           push-to-registry: true
 
   release:
-    needs: [tag, builder-image, extension-image]
+    needs: [tag, extension-image]
     name: Release
     runs-on: ubuntu-26.04
     steps:
