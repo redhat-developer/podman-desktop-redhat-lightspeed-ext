@@ -138,8 +138,8 @@ importers:
         version: 0.2.2
     devDependencies:
       '@podman-desktop/api':
-        specifier: 1.30.7
-        version: 1.30.7
+        specifier: 1.31.0
+        version: 1.31.0
       '@types/node':
         specifier: ^22
         version: 22.20.5
@@ -679,8 +679,8 @@ packages:
   '@oxc-project/types@0.156.0':
     resolution: {integrity: sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw==}
 
-  '@podman-desktop/api@1.30.7':
-    resolution: {integrity: sha512-QoHZ+dTKc8xQwc/45GJs/FUzuXApby0KJGpihqt+br7GDHAqpwJp1sTjZrhUZ8v1pkWBrDdutKASEbRZLvUMqQ==}
+  '@podman-desktop/api@1.31.0':
+    resolution: {integrity: sha512-4aUPr1PLqoGIwC3L545mtntzFPWLz+19Ls12/jYzY/es9XAccuwPPvXBTUosW0JPhBwHxboSyLOpQ1vJxYrZ5w==}
 
   '@podman-desktop/eslint-config@0.1.0':
     resolution: {integrity: sha512-u3AwhtAKSk8R4wJQRYl5iYzGSjUrZTwPtCN9tjaOiCyq5RsWW2UznBsRnZYtmnbO0sqOv0A6f9mcAh+/0AbGrw==}
@@ -3494,7 +3494,7 @@ snapshots:
 
   '@oxc-project/types@0.156.0': {}
 
-  '@podman-desktop/api@1.30.7': {}
+  '@podman-desktop/api@1.31.0': {}
 
   '@podman-desktop/eslint-config@0.1.0(eslint@10.14.0(jiti@2.7.0)(supports-color@10.2.2))':
     dependencies:
